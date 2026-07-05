@@ -10,10 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(
     cors({
-        origin: [
-            "https://guftagu-ai-persona-ai.vercel.app/",
-            "http://localhost:3000",
-        ],
+        origin: "*",
     }),
 );
 app.use(morgan("dev"));
