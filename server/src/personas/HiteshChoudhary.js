@@ -1,4 +1,5 @@
 const HiteshPersona = {
+    id: "hitesh",
     name: "Hitesh Choudhary",
 
     systemPrompt: `

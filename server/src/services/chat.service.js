@@ -1,23 +1,37 @@
 import OpenAI from "openai";
 import HiteshPersona from "../personas/HiteshChoudhary.js";
+import { getPersonaConfig } from "../personas/index.js";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPEN_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 function isValidMessage(text) {
     return typeof text === "string" && text.trim().length > 0;
 }
 
-export const getHiteshPersonaReply = async (userMessage) => {
+function trimHistory(history = [], maxMessages = 10) {
+    if (!Array.isArray(history)) return [];
+    return history.slice(-maxMessages);
+}
+
+export const getHiteshPersonaReply = async (
+    personaId,
+    userMessage,
+    history = [],
+) => {
     if (!isValidMessage(userMessage))
         throw new Error("userMessage must be a valid string");
+
+    const persona = getPersonaConfig(personaId);
+    const trimmedHistory = trimHistory(history);
 
     const messages = [
         {
             role: "system",
-            content: HiteshPersona.systemPrompt,
+            content: persona.systemPrompt,
         },
+        ...trimmedHistory,
         {
             role: "user",
             content: userMessage,
@@ -27,8 +41,8 @@ export const getHiteshPersonaReply = async (userMessage) => {
     const response = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages,
-        max_tokens: HiteshPersona.maxTokens,
-        temperature: HiteshPersona.temperature,
+        max_tokens: persona.maxTokens,
+        temperature: persona.temperature,
     });
 
     const reply = response.choices[0].message.content;

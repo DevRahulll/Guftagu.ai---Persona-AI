@@ -9,17 +9,22 @@ export default function Page() {
   const [activePersona, setActivePersona] = useState<Persona>(personas[0])
   return (
     <main
-      className="bg-bg text-text-primary min-h-screen transition-colors duration-300"
-      style={{ ["--accent" as string]: activePersona }}
+      className="bg-bg text-text-primary h-screen overflow-hidden transition-colors duration-500"
+      style={{ ["--accent" as string]: activePersona.accent }}
     >
-      <section className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl lg:grid-cols-2">
+      <section className="mx-auto grid h-[calc(100vh-4rem)] max-w-7xl overflow-hidden lg:grid-cols-2">
         {/* avtar panel left side */}
-        <AvatarPanel
-          activePersona={activePersona}
-          onChangePersona={setActivePersona}
-        />
+        <div className="h-full overflow-hidden">
+          <AvatarPanel
+            activePersona={activePersona}
+            onChangePersona={setActivePersona}
+          />
+        </div>
+
         {/* chat llm response panel right side */}
-        <ChatPanel activePersona={activePersona} />
+        <div className="h-full min-h-0 overflow-hidden">
+          <ChatPanel activePersona={activePersona} />
+        </div>
       </section>
     </main>
   )
