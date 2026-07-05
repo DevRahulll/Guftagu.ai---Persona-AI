@@ -62,7 +62,7 @@ export function ChatPanel({ activePersona }: Props) {
 
     try {
       const res = await fetch(
-        "https://guftagu-ai-persona-ai-2.onrender.com/api/chat",
+        "https://guftagu-ai-persona-ai-2.onrender.com/api/chat/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
