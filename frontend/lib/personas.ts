@@ -13,7 +13,7 @@ export const personas: Persona[] = [
     name: "Hitesh Choudhary",
     tagline: "Instructor, co-founder Learnyst, youtuber",
     initials: "HC",
-    accent: "#FF7F00", // electric blue — Tesla/SpaceX coded
+    accent: "#FF7F00",
     avatarSrc: "/HC.png",
   },
   {
@@ -21,7 +21,7 @@ export const personas: Persona[] = [
     name: "Piyush Garg",
     tagline: "Instructor, founder Teachyst, youtuber, Pink-lover",
     initials: "PG",
-    accent: "#FF7F00",
+    accent: "#f5bac5",
     avatarSrc: "/PG.jpg",
   },
 ]

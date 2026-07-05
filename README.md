@@ -1,10 +1,8 @@
-# Persona AI — Chat with an AI Playing a Character
+# Guftagu — Chat with an AI Playing a Character
 
 An AI chatbot that role-plays as different personas (currently: Hitesh Choudhary, Piyush Garg — swap in your own by editing one file). Built to practice full-stack skills: Node.js/Express backend, Next.js + Tailwind + shadcn/ui frontend, and prompt engineering for consistent persona behavior.
 
-<!--
-  [App screenshot](./screenshots/hero.png)
--->
+![App screenshot](./assets/hero.png)
 
 ---
 
@@ -253,19 +251,19 @@ No other files need to change — persona switching in the UI and routing on the
 
 **Light mode**
 
-<!-- ![Light mode](./screenshots/light-mode.png) -->
+![Light mode](./assets/light-hero.png)
 
 **Dark mode**
 
-<!-- ![Dark mode](./screenshots/dark-mode.png) -->
+![Dark mode](./assets/hero.png)
 
 **Persona switching**
 
-<!-- ![Persona switch](./screenshots/persona-switch.png) -->
+![Persona switch](./assets/piyush-persona.png)
 
 **Conversation in progress**
 
-<!-- ![Conversation](./screenshots/conversation.png) -->
+![Conversation](./assets/converation.png)
 
 ---
 
@@ -278,7 +276,7 @@ No other files need to change — persona switching in the UI and routing on the
 
 ---
 
-## Roadmap
+<!-- ## Roadmap
 
 - [ ] Streaming responses (token-by-token)
 - [ ] Persist history in a real database instead of localStorage
@@ -286,7 +284,7 @@ No other files need to change — persona switching in the UI and routing on the
 - [ ] Rate limiting per user/IP
 - [ ] Deploy backend (Render) + frontend (Vercel)
 
----
+--- -->
 
 ## License
 

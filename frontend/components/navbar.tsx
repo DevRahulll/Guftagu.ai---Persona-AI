@@ -8,7 +8,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <div className="shadow-[0_0_12px_var(--accent) h-2.5 w-2.5 rounded-full bg-accent transition-colors duration-300" />
           <span className="font-display text-text-primary text-lg tracking-tight">
-            PERSONA<span className="text-text-muted"> AI</span>
+            GUFTAGU
           </span>
         </div>
 
