@@ -61,15 +61,18 @@ export function ChatPanel({ activePersona }: Props) {
     setLoading(true)
 
     try {
-      const res = await fetch("http://localhost:8080/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: text,
-          history: nextMessages,
-          personaId: activePersona.id,
-        }),
-      })
+      const res = await fetch(
+        "https://guftagu-ai-persona-ai-2.onrender.com/api/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: text,
+            history: nextMessages,
+            personaId: activePersona.id,
+          }),
+        }
+      )
 
       if (!res.ok) throw new Error("Request failed")
 
